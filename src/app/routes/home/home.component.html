@@ -1,0 +1,180 @@
+<section class='home'>
+  <div class='home-left'>
+    <img src='assets/images/Juan003.png' alt='Juan Cardona' />
+    <div class='home-left__data'>
+      <div class='home-left__data-details'>
+        <h2>{{nombre}}</h2>
+        <h5>{{role}}</h5>
+        <p>{{geo}}</p>
+        <a href='tel:+15134445285' target='_blank'>{{phone}}</a><br />
+        <a href='mailto:j1cardona5852@gmail.com' target='_blank'>{{email}}</a>
+      </div>
+      <div class='no-small'>
+        <div>
+          <img src='assets/images/Juan004.png' alt='Juan Cardona' />
+        </div>
+        <div>
+          <p class='light italic'>
+            Bachelor's Degree in BSIT/SE
+          </p>
+          <p>
+            Successful, driven software engineer with background in creating, evaluating, and implementing high-profile,
+            mission-critical solutions.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='home-right'>
+    <div class='home-right__content'>
+      <section class='brief'>
+        <h2>Brief</h2>
+        <p>
+          Experienced Front-End developer who has worked for organizations like Lockheed Martin, Leidos, and Definitive
+          Logic to improve and maintain their code bases. Capable of supporting junior developers while also
+          continuously learning new advancements in the field. Experience leading development teams and advancing
+          projects from conception to launch. Devoted to growth and learning, with a willingness to use my talents on
+          both large and small development teams. Eager to take on more challenging issues and continue to look for ways
+          to increase user satisfaction.
+        </p>
+      </section>
+      <section class='skills'>
+        <h2 class='skills__h2'>Skills</h2>
+        <sup class='skills__sup'>(There's always room to grow)</sup>
+        <div class='skills__skill' *ngFor='let skill of skills'>
+          <div class='{{getLevel(skill.level)}}'>
+            <span>{{skill.title}}</span> <span><span class='no-small'>Skill: </span>{{skill.level}}/10</span>
+          </div>
+          <div class='{{getStringNumber(skill.time)}}'>{{checkTen(skill.time)}} yrs</div>
+        </div>
+      </section>
+      <section class='experience'>
+        <h2>Experience</h2>
+        <div class="experience__content">
+          <div class='title'>Definitive Logic, Remote — <span class='italic'>Senior Lead Software Engineer</span></div>
+          <div class='time'>October 2020 - PRESENT</div>
+          <div class='role'>
+            Working in an Agile space on a Department of Defense contract. Responsible for developing and maintaining
+            new mission critical web-based applications to replace legacy applications as well as maintain legacy
+            applications that consist of older web technologies. These applications range in technologies from AngularJS
+            - Angular 12 to React w/Redux including both JavaScript and Typescript languages. Write and maintain RESTful
+            web services. Develop, debug, and test multiple applications within the project simultaneously as primary
+            front-end developer with the following roles:
+            <ul>
+              <li>Lead Software Engineer</li>
+              <li>Senior Software Engineer</li>
+              <li>Technical Lead</li>
+              <li>Configuration Manager</li>
+              <li>Subject Matter Expert</li>
+              <li>Workflow Development</li>
+              <li>UI/UX</li>
+              <li>Git/GitLab Admin</li>
+              <li>Jenkins Admin</li>
+              <li>SonarQube admin</li>
+            </ul>
+          </div>
+        </div>
+        <div class="experience__content">
+          <div class='title'>Leidos, Beavercreek, OH — <span class='italic'>Lead Software Engineer</span></div>
+          <div class="time">September 2016 - October 2020</div>
+          <div class="role">
+            Worked in an Agile development environment developing and maintaining multiple USAF/DoD high visibility,
+            mission critical, React and Angular applications from proof of concept through Production.Acted as SME for
+            software factory employees to assist and guide development on modernization effort of a mission critical
+            application for USAF. Mentored college student who is now a Software Engineer IIon a DoD contract.Primary
+            design engineer implementing modular development practices allowing the team to create reusable components
+            that were capable of addressing various use cases.Primary front-end developer on 3-4 person team developing
+            enterprise level, cross browser, on-demand services. Spearheaded the drive to move away from existing
+            practices and convert a major project to a more centralized, maintainable, and internally beneficial
+            software model. This conversion has reduced maintenance overhead dramatically and has now become the
+            de-facto model for new development within the team. Led the development team to explore (and ultimately
+            adopt) a new front-end framework for enterprise applications, resulting in faster, more reliable deployment
+            cycles. The performance increase allowed the development team to handle more projects without increasing
+            total workload and ultimately reduced overhead per sprint.
+            <ul>
+              <li>Integration Architecture</li>
+              <li>Lead Front-End Developer</li>
+              <li>Subject Matter Expert</li>
+              <li>Component Management</li>
+              <li>Unit Testing</li>
+              <li>UI/UX</li>
+            </ul>
+          </div>
+        </div>
+        <div class="experience__content">
+          <div class="title">Lockheed Martin, Fairborn, OH — <span class='italic'>Lead Front-End Software Engineer</span></div>
+          <div class="time">September 2015 - September 2016</div>
+          <div class="role">
+            Maintain and upgrade existing enterprise application while planning and developing new front-end
+            solutions utilizing React/Redux, Angular (2+), JavaScript, Typescript, and SCSS connected to Java services
+            via custom REST APIs developed specifically to allow interaction with a Teradata Data Store.
+            <ul>
+              <li>Integration Architecture</li>
+              <li>Lead Front-End Developer</li>
+              <li>Unit Testing</li>
+              <li>UI/UX</li>
+              <li>R&D</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section class='projects'>
+        <h2>Projects</h2>
+        <ul>
+          <li>
+            D1scovery
+            <ul>
+              <li>Tech Lead</li>
+              <li>Lead Developer</li>
+              <li>Configuration Manager</li>
+              <li>Subject Matter Expert</li>
+              <li>UI/UX</li>
+            </ul>
+          </li>
+          <li>
+            LIMS-EV
+            <ul>
+              <li>Tech Lead</li>
+              <li>Lead Developer</li>
+              <li>Software Architecture</li>
+              <li>Front End Specialist</li>
+              <li>Front End Design</li>
+              <li>Unit Testing</li>
+              <li>UI/UX</li>
+            </ul>
+          </li>
+          <li>
+            Enterprise Capabilities
+            <ul>
+              <li>Software Architecture</li>
+              <li>Front End Specialist</li>
+              <li>Front End Design</li>
+              <li>Integration Architect</li>
+              <li>Unit Testing</li>
+              <li>UI/UX</li>
+            </ul>
+          </li>
+          <li>
+            Migration Team
+            <ul>
+              <li>Migration of ticketing system</li>
+              <li>Configuration of ticketing system</li>
+              <li>Migration of repositories</li>
+              <li>Configuration of repositories</li>
+              <li>Documentation / Wiki</li>
+            </ul>
+          </li>
+          <li>
+            Cost Reduction Team<br />
+            <sub>(Resulted in approximately $716,000 annual savings)</sub>
+            <ul>
+              <li>Cost Analysis</li>
+              <li>Use Analysis</li>
+              <li>Risk Analysis</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+    </div>
+  </div>
+</section>

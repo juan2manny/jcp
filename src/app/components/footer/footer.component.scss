@@ -1,0 +1,11 @@
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: .5rem 1em;
+  background-color: var(--secondary);
+  position: sticky;
+  width: 100%;
+  top: 100%;
+  color: var(--wht);
+}
