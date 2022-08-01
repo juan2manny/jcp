@@ -38,14 +38,14 @@
           to increase user satisfaction.
         </p>
       </section>
+
       <section class='skills'>
         <h2 class='skills__h2'>Skills</h2>
-        <sup class='skills__sup'>(There's always room to grow)</sup>
-        <div class='skills__skill' *ngFor='let skill of skills'>
-          <div class='{{getLevel(skill.level)}}'>
-            <span>{{skill.title}}</span> <span><span class='no-small'>Skill: </span>{{skill.level}}/10</span>
-          </div>
-          <div class='{{getStringNumber(skill.time)}}'>{{checkTen(skill.time)}} yrs</div>
+        <sup class='skills__sup'>(There's always room to grow)</sup><br />
+        <div class='skills__cards'>
+          <app-card [skills]='languages' title='Languages'></app-card>
+          <app-card [skills]='frameworks' title='Frameworks'></app-card>
+          <app-card [skills]='tools' title='Tools'></app-card>
         </div>
       </section>
       <section class='experience'>
@@ -102,7 +102,8 @@
           </div>
         </div>
         <div class="experience__content">
-          <div class="title">Lockheed Martin, Fairborn, OH — <span class='italic'>Lead Front-End Software Engineer</span></div>
+          <div class="title">Lockheed Martin, Fairborn, OH — <span class='italic'>Lead Front-End Software
+              Engineer</span></div>
           <div class="time">September 2015 - September 2016</div>
           <div class="role">
             Maintain and upgrade existing enterprise application while planning and developing new front-end

@@ -1,0 +1,206 @@
+.card {
+  width: 400px;
+  margin: 1em;
+}
+
+.card__content {
+  text-align: center;
+  position: relative;
+  padding: 15em 5em;
+  transition: transform 3s;
+  transform-style: preserve-3d;
+}
+
+.card:hover .card__content {
+  transform: rotateY(.5turn);
+}
+
+.card__front,
+.card__back {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 5em 3em;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  display: grid;
+  align-content: center;
+}
+
+.card__front {
+  background-color: var(--bg);
+  color: var(--primary);
+}
+
+.card__front::before {
+  content: '';
+  position: absolute;
+  inset: 1em;
+  border: 3px solid currentColor;
+  transform: var(--level-one);
+}
+
+.card__title {
+  font-size: 2rem;
+  transform: var(--level-three);
+  order: 2;
+  text-transform: uppercase;
+}
+
+.card__subtitle {
+  transform: var(--level-two);
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: .75rem;
+  font-weight: var(--fw-bold);
+  opacity: .7;
+}
+
+.card__body {
+  transform: var(--level-two);
+  font-weight: var(fw-normal);
+  font-size: 1.5rem;
+  line-height: 1.6;
+}
+
+
+
+.card__back {
+  font-size: 1rem;
+  transform: rotateY(.5turn);
+  background-color: var(--light);
+  
+  .skills__skill {
+    transform-style: preserve-3d;
+    font-size: 1rem;
+    color: var(--wht);
+    display: grid;
+    grid-template-columns: 5fr 1fr;
+    gap: .5rem;
+    transition: all .5s ease-in-out;
+
+    &:hover {
+      color: var(--blk);
+    }
+  }
+
+  >div {
+    transform-style: preserve-3d;
+  }
+
+  >div div {
+    margin: .25rem 0;
+    padding: .25rem .25rem;
+    position: relative;
+    z-index: 1;
+    transition: all .5s ease-in-out;
+    user-select: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &:before {
+      position: absolute;
+      content: '';
+      width: 100%;
+      inset: 0;
+      background-image: linear-gradient(90deg, var(--primary), var(--secondary));
+      z-index: -1;
+      border-radius: 0 1rem 0 0;
+      transition: all .5s ease-in-out;
+      transform: var(--level-one);
+    }
+
+    &:hover {
+      &:after,
+      &:before {
+        opacity: .5;
+      }
+    }
+  }
+
+  >div {
+    padding: 0;
+  }
+
+  .l1,
+  .l2,
+  .l3,
+  .l4,
+  .l5,
+  .l6,
+  .l7,
+  .l8,
+  .l9,
+  .l10 {
+    padding: 0 2rem;
+    margin: 0;
+    display: grid;
+    place-content: center;
+    white-space: nowrap;
+    transform: var(--level-two);
+
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      width: 0;
+      animation: grow-width 1.5s ease-in .5s forwards;
+    }
+
+    &:before {
+      inset: 0;
+      left: -2px;
+      border-radius: 0 1rem 0 0;
+      z-index: -1;
+    }
+  }
+
+  .l1 {
+    width: calc(100% / 10 * 1);
+  }
+
+  .l2 {
+    width: calc(100% / 10 * 2);
+  }
+
+  .l3 {
+    width: calc(100% / 10 * 3);
+  }
+
+  .l4 {
+    width: calc(100% / 10 * 4);
+  }
+
+  .l5 {
+    width: calc(100% / 10 * 5);
+  }
+
+  .l6 {
+    width: calc(100% / 10 * 6);
+  }
+
+  .l7 {
+    width: calc(100% / 10 * 7);
+  }
+
+  .l8 {
+    width: calc(100% / 10 * 8);
+  }
+
+  .l9 {
+    width: calc(100% / 10 * 9);
+  }
+
+  .l10 {
+    width: calc(100% / 10 * 10);
+  }
+
+  .skill__time {
+    width: 2.1rem;
+    line-height: 1;
+    transform: var(--level-two);
+  }
+}

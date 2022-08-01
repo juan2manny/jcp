@@ -3,7 +3,8 @@ import { Component, OnInit } from '@angular/core';
 interface Skills {
   title: string,
   time: number,
-  level: number
+  level: number,
+  details?: string
 }
 
 @Component({
@@ -12,7 +13,6 @@ interface Skills {
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  stringNumbers = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten']
   nombreFull = 'Juan Cardona'
   roleFull = 'Sr. Software Engineer '
   geoFull = 'Cincinnati / Dayton, OH'
@@ -51,6 +51,29 @@ export class HomeComponent implements OnInit {
     { title: 'Git', time: 6, level: 9 },
     { title: 'Jenkins', time: 6, level: 8 },
     { title: 'SonarQube', time: 5, level: 8 },
+  ]
+
+  languages: Array<Skills> = [
+    { title: 'HTML5', time: 10, level: 9 },
+    { title: 'CSS/SCSS', time: 10, level: 9 },
+    { title: 'JavaScript', time: 10, level: 9 },
+    { title: 'Typescript', time: 6, level: 9 },
+    { title: 'Python', time: 4, level: 5 },
+    { title: 'Java', time: 4, level: 6 },
+    { title: 'C#', time: 3, level: 4 }
+  ]
+
+  frameworks: Array<Skills> = [
+    { title: 'Angular', time: 6, level: 9, details: 'AngularJS - Angular 14' },
+    { title: 'React', time: 6, level: 9, details: 'React & React + Redux' },
+    { title: 'Vue', time: 3, level: 6 }
+  ]
+
+  tools: Array<Skills> = [
+    { title: 'Git', time: 6, level: 9 },
+    { title: 'Jenkins', time: 6, level: 8 },
+    { title: 'SonarQube', time: 5, level: 8 },
+    { title: 'Maven', time: 6, level: 7 }
   ]
 
   constructor() { }
@@ -142,17 +165,5 @@ export class HomeComponent implements OnInit {
         this.typeEmail(full)
       }, 50)
     }
-  }
-
-  getStringNumber(num: number): string {
-    return this.stringNumbers[num]
-  }
-
-  getLevel(num: number): string {
-    return `l${num}`
-  }
-
-  checkTen(num: number): string {
-    return num === 10 ? '10+' : num.toString()
   }
 }
