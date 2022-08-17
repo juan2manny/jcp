@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 interface Skills {
   title: string,
@@ -13,18 +13,12 @@ interface Skills {
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.scss']
 })
-export class CardComponent implements OnInit {
+export class CardComponent {
 
   @Input() skills: Array<Skills> | undefined
   @Input() cardTitle: string | undefined
 
   stringNumbers = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten']
-
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
 
   getStringNumber(num: number): string {
     return this.stringNumbers[num]

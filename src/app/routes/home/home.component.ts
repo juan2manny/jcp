@@ -104,15 +104,13 @@ export class HomeComponent implements OnInit {
   observer = new IntersectionObserver(cards => {
     cards.forEach(card => {
       card.target.classList.toggle('show', card.isIntersecting)
-      // if (card.isIntersecting) {
-      //   this.observer.unobserve(card.target)
-      // }
+      // note: if (card.isIntersecting) {
+      // note:  this.observer.unobserve(card.target)
+      // note: }
     })
   }, {
     rootMargin: "-32px"
   })
-
-  constructor() { }
 
   ngOnInit(): void {
     setTimeout(() => {
