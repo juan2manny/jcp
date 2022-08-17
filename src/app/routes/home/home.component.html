@@ -2,19 +2,17 @@
   <div class='home-left'>
     <img src='assets/images/Juan003.png' alt='Juan Cardona' />
     <div class='home-left__data'>
-      <div class='home-left__data-details'>
-        <h2>{{nombre}}</h2>
-        <h5>{{role}}</h5>
+      <div class='home-left__data-details' aria-describedby='name'>
+        <h1 id='name'>{{nombre}}</h1>
+        <h2 class='subheading'>{{role}}</h2>
         <p>{{geo}}</p>
-        <a href='tel:+15134445285' target='_blank'>{{phone}}</a><br />
-        <a href='mailto:j1cardona5852@gmail.com' target='_blank'>{{email}}</a>
+        <a href='tel:+19376960130' target='_blank'>{{phone}}</a><br />
+        <a href='mailto:juan@juancardona.dev'  target='_blank'>{{email}}</a>
       </div>
-      <div class='no-small'>
+      <div class='no-small floater'>
         <div>
-          <img src='assets/images/Juan004.png' alt='Juan Cardona' />
-        </div>
-        <div>
-          <p class='light italic'>
+          <img src='assets/images/Juan004.webp' alt='Juan Cardona' />
+          <p class='primary italic'>
             Bachelor's Degree in BSIT/SE
           </p>
           <p>
@@ -26,9 +24,9 @@
     </div>
   </div>
   <div class='home-right'>
-    <div class='home-right__content'>
-      <section class='brief'>
-        <h2>Brief</h2>
+    <main class='home-right__content'>
+      <section class='brief' aria-describedby='briefTitle'>
+        <h2 id='briefTitle'>Brief</h2>
         <p>
           Experienced Front-End developer who has worked for organizations like Lockheed Martin, Leidos, and Definitive
           Logic to improve and maintain their code bases. Capable of supporting junior developers while also
@@ -39,17 +37,17 @@
         </p>
       </section>
 
-      <section class='skills'>
-        <h2 class='skills__h2'>Skills</h2>
+      <section class='skills' aria-describedby='skillsTitle'>
+        <h2 id='skillsTitle' class='skills__h2'>Skills</h2>
         <sup class='skills__sup'>(There's always room to grow)</sup><br />
         <div class='skills__cards'>
-          <app-card [skills]='languages' title='Languages'></app-card>
-          <app-card [skills]='frameworks' title='Frameworks'></app-card>
-          <app-card [skills]='tools' title='Tools'></app-card>
+          <app-card [skills]='languages' cardTitle='Languages'></app-card>
+          <app-card [skills]='frameworks' cardTitle='Frameworks'></app-card>
+          <app-card [skills]='tools' cardTitle='Tools'></app-card>
         </div>
       </section>
-      <section class='experience'>
-        <h2>Experience</h2>
+      <section class='experience' aria-describedby='expTitle'>
+        <h2 id='expTitle'>Experience</h2>
         <div class="experience__content">
           <div class='title'>Definitive Logic, Remote — <span class='italic'>Senior Lead Software Engineer</span></div>
           <div class='time'>October 2020 - PRESENT</div>
@@ -119,63 +117,25 @@
           </div>
         </div>
       </section>
-      <section class='projects'>
-        <h2>Projects</h2>
-        <ul>
-          <li>
-            D1scovery
-            <ul>
-              <li>Tech Lead</li>
-              <li>Lead Developer</li>
-              <li>Configuration Manager</li>
-              <li>Subject Matter Expert</li>
-              <li>UI/UX</li>
-            </ul>
-          </li>
-          <li>
-            LIMS-EV
-            <ul>
-              <li>Tech Lead</li>
-              <li>Lead Developer</li>
-              <li>Software Architecture</li>
-              <li>Front End Specialist</li>
-              <li>Front End Design</li>
-              <li>Unit Testing</li>
-              <li>UI/UX</li>
-            </ul>
-          </li>
-          <li>
-            Enterprise Capabilities
-            <ul>
-              <li>Software Architecture</li>
-              <li>Front End Specialist</li>
-              <li>Front End Design</li>
-              <li>Integration Architect</li>
-              <li>Unit Testing</li>
-              <li>UI/UX</li>
-            </ul>
-          </li>
-          <li>
-            Migration Team
-            <ul>
-              <li>Migration of ticketing system</li>
-              <li>Configuration of ticketing system</li>
-              <li>Migration of repositories</li>
-              <li>Configuration of repositories</li>
-              <li>Documentation / Wiki</li>
-            </ul>
-          </li>
-          <li>
-            Cost Reduction Team<br />
-            <sub>(Resulted in approximately $716,000 annual savings)</sub>
-            <ul>
-              <li>Cost Analysis</li>
-              <li>Use Analysis</li>
-              <li>Risk Analysis</li>
-            </ul>
-          </li>
-        </ul>
+      <section class='projects' aria-describedby='projTitle'>
+        <h2 id='projTitle'>Projects</h2>
+        <div class='card-holder'>
+          <div class='projCard' *ngFor='let proj of projects'>
+            <div class='proj-preview'><h4>{{proj.name}}</h4></div>
+            <div class='proj-content'>
+              <h4>{{proj.name}}</h4>
+              <p>({{proj.brief}})</p>
+              <ul>
+                <li *ngFor='let role of proj.roles; let i = index'>{{i ? ' • ' : ''}}{{role}}</li>
+              </ul>
+            </div>
+            <div *ngIf='proj.time' class='proj-years'>
+              <div class='time'>{{proj.time}}</div> year{{proj.time > 1 ? 's' : ''}}
+            </div>
+          </div>
+        </div>
       </section>
-    </div>
+    </main>
   </div>
 </section>
+\

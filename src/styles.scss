@@ -5,9 +5,9 @@
   --wht: #e2e2e2;
   --light: rgb(97, 97, 97);
   --bg: #494949;
-  --level-one: translateZ(3rem);
-  --level-two: translateZ(6rem);
-  --level-three: translateZ(9rem);
+  --level-one: translateZ(2rem);
+  --level-two: translateZ(4rem);
+  --level-three: translateZ(6rem);
   
   --fw-normal: 400;
   --fw-bold: 700;
@@ -28,6 +28,7 @@ body {
   padding: 0;
   margin: 0;
   background-color: var(--bg);
+  user-select: none;
 }
 
 a,
@@ -50,4 +51,12 @@ footer {
 
 .italic {
   font-style: italic;
+}
+
+.primary {
+  color: var(--primary);
+}
+
+.secondary {
+  color: var(--secondary);
 }

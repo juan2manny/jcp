@@ -2,7 +2,7 @@
   <div class='card__content'>
     
     <div class='card__front'>
-      <h3 class='card__title'>{{title}}</h3>
+      <h3 class='card__title'>{{cardTitle}}</h3>
       <p class='card__subtitle'>More about:</p>
     </div> 
     
@@ -12,7 +12,7 @@
           <div class='{{getLevel(skill.level)}}'>
             <span>{{skill.title}}</span> <span>{{skill.level}}/10</span>
           </div>
-          <div class='skill__time'>{{checkTen(skill.time)}} yrs</div>
+          <div class='skill__time'><span>{{checkTen(skill.time)}} yrs</span></div>
         </div>
       </div>
     </div>

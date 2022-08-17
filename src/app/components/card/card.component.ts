@@ -16,7 +16,7 @@ interface Skills {
 export class CardComponent implements OnInit {
 
   @Input() skills: Array<Skills> | undefined
-  @Input() title: string | undefined
+  @Input() cardTitle: string | undefined
 
   stringNumbers = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten']
 
@@ -33,7 +33,7 @@ export class CardComponent implements OnInit {
   getLevel(num: number): string {
     return `l${num}`
   }
-  
+
   checkTen(num: number): string {
     return num === 10 ? '10+' : num.toString()
   }

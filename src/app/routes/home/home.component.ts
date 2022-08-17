@@ -7,6 +7,13 @@ interface Skills {
   details?: string
 }
 
+interface Project {
+  name: string,
+  roles: Array<string>,
+  brief: string,
+  time?: number
+}
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -16,8 +23,8 @@ export class HomeComponent implements OnInit {
   nombreFull = 'Juan Cardona'
   roleFull = 'Sr. Software Engineer '
   geoFull = 'Cincinnati / Dayton, OH'
-  phoneFull = '513 | 444 5285'
-  emailFull = 'j1cardona5852@gmail.com'
+  phoneFull = '937 | 696-0130'
+  emailFull = 'juan@juancardona.dev'
   nombre = ''
   role = ''
   geo = ''
@@ -36,21 +43,37 @@ export class HomeComponent implements OnInit {
   emailCount: number = 0
   text: string = ''
 
-  skills: Array<Skills> = [
-    { title: 'HTML5', time: 10, level: 9 },
-    { title: 'CSS/SCSS', time: 10, level: 9 },
-    { title: 'JavaScript', time: 10, level: 9 },
-    { title: 'Typescript', time: 6, level: 9 },
-    { title: 'Python', time: 4, level: 5 },
-    { title: 'Java', time: 4, level: 6 },
-    { title: 'C#', time: 3, level: 4 },
-    { title: 'Maven', time: 6, level: 7 },
-    { title: 'Angular', time: 6, level: 9 },
-    { title: 'React', time: 6, level: 9 },
-    { title: 'Redux', time: 6, level: 8 },
-    { title: 'Git', time: 6, level: 9 },
-    { title: 'Jenkins', time: 6, level: 8 },
-    { title: 'SonarQube', time: 5, level: 8 },
+  projects: Array<Project> = [
+    {
+      name: 'D1scovery',
+      roles: ['Tech Lead', 'Lead Developer', 'Configuration Manager', 'Subject Matter Expert', 'UI/UX'],
+      brief: 'Encompasses 24 disparate applications with a wide range of use cases and users.',
+      time: 4
+    },
+    {
+      name: 'LIMS-EV',
+      roles: ['Tech Lead', 'Lead Developer', 'Software Architecture', 'Front End Specialist', 'Front End Design', 'Unit Testing', 'UI/UX'],
+      brief: 'Logistics, Installations and Mission Support - Enterprise View',
+      time: 6
+    },
+    {
+      name: 'ECS',
+      roles: ['Software Architecture', 'Front End Lead', 'Front End Design', 'Integration Architect', 'Unit Testing', 'UI/UX'],
+      brief: 'Enterprise Capabilities Suite - A suite of on-demand plug-in applications to provide communication, reporting, and data quality checks to mission applications.',
+      time: 6
+    },
+    {
+      name: 'DI2E Transition',
+      roles: ['Research', 'Migration & Configuration of Ticketing System & Repositories', 'Documentation / Wiki'],
+      brief: 'An effort to migrate the entire development effort (ticket tracking, repositories, ci/cd) into a new cloud solution.',
+      time: 1
+    },
+    {
+      name: 'Cost Reduction',
+      roles: ['Cost Analysis', 'Use Analysis', 'Risk Analysis'],
+      brief: 'An effort resulting in approximately $716,000 annual savings for the United States Air Force',
+      time: 1
+    }
   ]
 
   languages: Array<Skills> = [
@@ -76,6 +99,19 @@ export class HomeComponent implements OnInit {
     { title: 'Maven', time: 6, level: 7 }
   ]
 
+  experienceCards: any
+
+  observer = new IntersectionObserver(cards => {
+    cards.forEach(card => {
+      card.target.classList.toggle('show', card.isIntersecting)
+      // if (card.isIntersecting) {
+      //   this.observer.unobserve(card.target)
+      // }
+    })
+  }, {
+    rootMargin: "-32px"
+  })
+
   constructor() { }
 
   ngOnInit(): void {
@@ -95,6 +131,11 @@ export class HomeComponent implements OnInit {
     setTimeout(() => {
       this.typeEmail(this.emailFull)
     }, 4350)
+
+    this.experienceCards = document.querySelectorAll('.experience__content')
+    this.experienceCards.forEach((card: any) => {
+      this.observer.observe(card)
+    })
   }
 
   typeRole(full: string): void {
