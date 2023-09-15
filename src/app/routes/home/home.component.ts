@@ -24,7 +24,7 @@ export class HomeComponent implements OnInit {
   roleFull = 'Sr. Software Engineer '
   geoFull = 'Cincinnati / Dayton, OH'
   phoneFull = '937 | 696-0130'
-  emailFull = 'juan@juancardona.dev'
+  emailFull = 'manny@mannycardona.com'
   nombre = ''
   role = ''
   geo = ''
@@ -44,6 +44,12 @@ export class HomeComponent implements OnInit {
   text: string = ''
 
   projects: Array<Project> = [
+    {
+      name: 'Army HRC',
+      roles: ['Tech Lead', 'Lead Developer', 'Front End Developer', 'UI/UX'],
+      brief: 'Recreation of a legacy on-prem application to function in the cloud with modern technology and integrate with a Drupal CMS backend.',
+      time: 1
+    },
     {
       name: 'D1scovery',
       roles: ['Tech Lead', 'Lead Developer', 'Configuration Manager', 'Subject Matter Expert', 'UI/UX'],
@@ -80,22 +86,22 @@ export class HomeComponent implements OnInit {
     { title: 'HTML5', time: 10, level: 9 },
     { title: 'CSS/SCSS', time: 10, level: 9 },
     { title: 'JavaScript', time: 10, level: 9 },
-    { title: 'Typescript', time: 6, level: 9 },
+    { title: 'Typescript', time: 8, level: 9 },
     { title: 'Python', time: 4, level: 5 },
     { title: 'Java', time: 4, level: 6 },
     { title: 'C#', time: 3, level: 4 }
   ]
 
   frameworks: Array<Skills> = [
-    { title: 'Angular', time: 6, level: 9, details: 'AngularJS - Angular 14' },
+    { title: 'Angular', time: 8, level: 9, details: 'AngularJS - Angular 16' },
     { title: 'React', time: 6, level: 9, details: 'React & React + Redux' },
     { title: 'Vue', time: 3, level: 6 }
   ]
 
   tools: Array<Skills> = [
-    { title: 'Git', time: 6, level: 9 },
+    { title: 'Git', time: 10, level: 9 },
     { title: 'Jenkins', time: 6, level: 8 },
-    { title: 'SonarQube', time: 5, level: 8 },
+    { title: 'SonarQube', time: 7, level: 8 },
     { title: 'Maven', time: 6, level: 7 }
   ]
 
